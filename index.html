@@ -340,14 +340,14 @@
         </div>
     </div>
 
-    <audio id="myAudio" src="/audio/lagu2.mp3" preload="auto"></audio>
-    <audio id="gwmAudio" src="/audio/lagu1.mp3" preload="auto"></audio>
+    <audio id="myAudio" src="audio/lagu2.mp3" preload="auto"></audio>
+    <audio id="gwmAudio" src="audio/lagu1.mp3" preload="auto"></audio>
 
     <script>
         const myAudio = document.getElementById('myAudio');
         const gwmAudio = document.getElementById('gwmAudio');
 
-
+        myAudio.play();
         startBtn.addEventListener('click', function () {
             myAudio.play();  // Mulai musik
             startBtn.style.display = 'none';  // Hilangkan tombol setelah diklik
