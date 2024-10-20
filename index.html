@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .awan {
+            transform: translateX(100%);
+        }
+
+        .fa-cloud {
+            color: white;
+            font-size: 75px;
+            animation: awan infinite linear;
+        }
+
+        .fa-heart {
+            color: white;
+            font-size: 120px;
+            animation: awan infinite linear;
+        }
+
+        .fa-cloud-moon-rain {
+            color: white;
+            font-size: 80px;
+            animation: awan infinite linear;
+        }
+
+        /* Durasi dan delay acak untuk setiap awan */
+        .a {
+            animation-duration: 16s;
+            animation-delay: 2s;
+        }
+
+        .b {
+            animation-duration: 22s;
+            animation-delay: 19s;
+        }
+
+        .c {
+            animation-duration: 18s;
+            animation-delay: 6s;
+        }
+
+        .e {
+            animation-duration: 26s;
+            animation-delay: 9s;
+        }
+
+        .f {
+            animation-duration: 30s;
+            animation-delay: 3s;
+        }
+
+        .g {
+            animation-duration: 35s;
+            animation-delay: 12s;
+        }
+
+        .h {
+            animation-duration: 22s;
+            animation-delay: 9s;
+        }
+
+        .i {
+            animation-duration: 28s;
+            animation-delay: 2s;
+        }
+
+        .j {
+            animation-duration: 32s;
+            animation-delay: 11s;
+        }
+
+        .k {
+            animation-duration: 24s;
+            animation-delay: 9s;
+        }
+
+        .l {
+            animation-duration: 27s;
+            animation-delay: 2s;
+        }
+
+        .m {
+            animation-duration: 35s;
+            animation-delay: 18s;
+        }
+
+        .n {
+            animation-duration: 31s;
+            animation-delay: 4s;
+        }
+
+        @keyframes awan {
+            0% {
+                transform: translate(100%, 0px);
+
+            }
+
+            100% {
+                transform: translate(-200%, 20px);
+            }
+        }
+
+        p {
+            font-size: 15px;
+        }
+
+        .pesawat {
+            animation: gerak_atas_bawah 2s infinite ease-in-out;
+            animation-delay: 2s;
+        }
+
+        .pesawat-terbang {
+            animation: gerak_ke_depan 4s 1 forwards;
+        }
+
+        .pesawat-mundur {
+            animation: gerak_mundur 14s 1 forwards ease-in;
+        }
+
+        @keyframes gerak_mundur {
+            0% {
+                transform: translateX(0px);
+
+            }
+
+            50% {
+                transform: translateX(-900px);
+            }
+
+
+            100% {
+                transform: translateX(700px);
+            }
+        }
+
+        @keyframes gerak_atas_bawah {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        @keyframes gerak_ke_depan {
+            0% {
+                transform: translateX(-800px);
+            }
+
+            100% {
+                transform: translateX(0px);
+            }
+        }
+
+        @keyframes jatuh {
+            0% {
+                transform: translate(0px, 0px);
+            }
+
+            100% {
+                transform: translate(500px, 500px);
+            }
+        }
+
+        @keyframes kedap {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .kedap {
+            animation: kedap 2s infinite;
+        }
+
+        .pesawat-jatuh {
+            animation: jatuh 6s 1 forwards ease-in-out;
+        }
+
+        .bg-pink-300 {
+            transition: background-color 0.5s ease;
+            /* Transisi lembut */
+        }
+
+        .bg-gray-800 {
+            transition: background-color 2s ease;
+            /* Transisi lembut */
+        }
+
+        .foto {
+            transform: translateX(-400px);
+            animation: foto 6s 1 forwards ease-in;
+            display: none;
+
+        }
+
+        @keyframes foto {
+            0% {
+                transform: translate(-1400px, 40px);
+            }
+
+            100% {
+                transform: translate(50px, 40px);
+
+            }
+        }
+
+        .foto img {
+            animation: gerak_atas_bawah 2s infinite ease-in-out;
+            animation-delay: 1.4s;
+        }
+    </style>
+</head>
+
+<body class="overflow-hidden bg-gray-800">
+    <div id="background" class="bg-pink-300 w-full h-screen flex items-center">
+        <div class="awan w-full absolute flex flex-col h-screen justify-evenly">
+
+            <div class="kedap">
+                <i class="flex justify-center items-center gap-2 fa-solid fa-cloud fa-beat-fade a">
+                    <p>Maaff Sayaang</p>
+                </i>
+            </div>
+            <div class="kedap">
+                <i class="flex justify-center items-center gap-2 fa-solid fa-cloud fa-beat-fade b">
+                    <p>Janji Gak ngulangiin</p>
+                </i>
+            </div>
+            <div class="kedap">
+                <i class="flex justify-center items-center gap-2 fa-solid fa-cloud fa-beat-fade c">
+                    <p>Kamu kok bisa sabar bngt sii</p>
+                </i>
+            </div>
+            <div class="kedap">
+                <i class="flex justify-center items-center gap-2 fa-solid fa-cloud fa-beat-fade e">
+                    <p>Dimaafin ya..</p>
+                </i>
+            </div>
+            <div class="kedap">
+                <i class="flex justify-center items-center gap-2 fa-solid fa-cloud fa-beat-fade f">
+                    <p>Pliss maafin</p>
+                </i>
+            </div>
+            <div class="kedap">
+                <i class="flex justify-center items-center gap-2 fa-solid fa-cloud fa-beat-fade g">
+                    <p>Plissss</p>
+                </i>
+            </div>
+            <div class="kedap">
+                <i class="flex justify-center items-center gap-2 fa-solid fa-cloud fa-beat-fade h">
+                    <p>Kalo kamu ga maafin</p>
+                </i>
+            </div>
+            <div class="kedap">
+                <i class="flex justify-center items-center gap-2 fa-solid fa-cloud fa-beat-fade i">
+                    <p>udaaa yaa</p>
+                </i>
+            </div>
+            <div class="kedap">
+                <i class="flex justify-center items-center gap-2 fa-solid fa-cloud fa-beat-fade j">
+                    <p>Jangan marah lagi</p>
+                </i>
+            </div>
+            <div class="kedap">
+                <i class="flex justify-center items-center gap-2 fa-solid fa-cloud fa-beat-fade k">
+                    <p>Pecawatnya jatuh</p>
+                </i>
+            </div>
+            <div class="kedap">
+                <i class="flex justify-center items-center gap-2 fa-solid fa-cloud fa-beat-fade l">
+                    <p>Jangan marah lagiii</p>
+                </i>
+            </div>
+            <div class="kedap">
+                <i class="flex justify-center items-center gap-2 fa-solid fa-cloud fa-beat-fade m">
+                    <p>Janjii terahir</p>
+                </i>
+            </div>
+            <div class="kedap">
+                <i class="flex justify-center items-center gap-2 fa-solid fa-cloud fa-beat-fade n">
+                    <p>Maaff sayanggg</p>
+                </i>
+            </div>
+
+        </div>
+
+        <div id="prayText" class="absolute translate-x-1/2 w-full text-white text-3xl"
+            style="display: none;">
+            <h1>
+                Pray For Pilot :(
+            </h1>
+        </div>
+        <div id="pesawat" class="overflow-hidden pesawat w-full flex justify-center items-center gap-1">
+            <i class="pesawat-terbang fa-solid fa-bars-staggered fa-2x text-white"></i>
+            <i class="pesawat-terbang fa-solid fa-plane fa-3x text-white"></i>
+        </div>
+
+        <div class="absolute foto">
+            <img src="img/KACIW.png" alt="" srcset="" style="width: 90%;">
+        </div>
+    </div>
+
+    <audio id="myAudio" src="/audio/lagu2.mp3" preload="auto"></audio>
+    <audio id="gwmAudio" src="/audio/lagu1.mp3" preload="auto"></audio>
+
+    <script>
+        const myAudio = document.getElementById('myAudio');
+        const gwmAudio = document.getElementById('gwmAudio');
+
+        myAudio.play();
+
+        setTimeout(function () {
+            Swal.fire({
+                title: 'Maafiin akuu yaa sayaang ',
+                showDenyButton: true,
+                showCancelButton: false,
+                confirmButtonText: 'IYAA',
+                denyButtonText: `GMW`,
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire('YEEYYYYYY!', '', 'success');
+                    myAudio.play();
+                    const clouds = document.querySelectorAll('.fa-cloud');
+                    clouds.forEach((cloud) => {
+                        cloud.classList.remove('fa-cloud');
+                        cloud.classList.add('fa-heart');
+                    });
+                    const allText = document.querySelectorAll('p');
+                    allText.forEach((text) => {
+                        text.style.display = 'none';
+                    });
+                    setTimeout(() => {
+                        const pesawat = document.querySelectorAll('.pesawat-terbang');
+                        pesawat.forEach((p) => {
+                            p.classList.remove('pesawat-terbang');
+                            p.classList.add('pesawat-mundur');
+                        });
+                    }, 6000);
+
+                    setTimeout(() => {
+
+                        const fotoDiv = document.querySelector('.foto');
+                        fotoDiv.style.display = 'block'; // Tampilkan foto
+                    }, 14000);
+
+
+
+
+                } else if (result.isDenied) {
+                    myAudio.pause();
+                    gwmAudio.play();
+
+                    document.getElementById('background').classList.remove('bg-pink-300');
+                    document.getElementById('background').classList.add('bg-gray-800');
+
+                    const clouds = document.querySelectorAll('.fa-cloud');
+                    clouds.forEach((cloud) => {
+                        cloud.classList.remove('fa-cloud');
+                        cloud.classList.add('fa-cloud-moon-rain');
+                    });
+
+                    setTimeout(() => {
+                        document.getElementById('pesawat').classList.remove('pesawat');
+                        document.getElementById('pesawat').classList.add('pesawat-jatuh');
+                    }, 15000);
+
+                    setTimeout(() => {
+                        const prayText = document.getElementById('prayText');
+                        prayText.style.display = 'block'; // Tampilkan teks
+                    }, 21000);
+                }
+            });
+        }, 30000);
+    </script>
+</body>
+
+</html>
